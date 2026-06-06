@@ -396,31 +396,7 @@ function ContactSection() {
   const submit = async (e) => {
     e.preventDefault();
     setStatus("sending");
-    /*
-      ── HOW TO CONNECT EMAIL NOTIFICATIONS ──────────────────────────
-      OPTION A — EmailJS (recommended, free):
-        1. Sign up at https://emailjs.com
-        2. Create a service + template
-        3. Install: npm install @emailjs/browser
-        4. Replace the setTimeout below with:
-              import emailjs from "@emailjs/browser";
-              await emailjs.send(
-                "YOUR_SERVICE_ID",
-                "YOUR_TEMPLATE_ID",
-                { from_name: form.name, from_email: form.email,
-                  subject: form.subject, message: form.message,
-                  to_name: "Shalini Tiwari" },
-                "YOUR_PUBLIC_KEY"
-              );
-        Both you (owner) and the sender will receive emails
-        if you set up two email templates — one for each party.
 
-      OPTION B — Formspree (zero setup):
-        Change <form onSubmit={submit}> to
-        <form action="https://formspree.io/f/YOUR_ID" method="POST">
-        and remove this JS handler entirely.
-      ─────────────────────────────────────────────────────────────────
-    */
     setTimeout(() => {
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });
@@ -480,6 +456,7 @@ function ContactSection() {
           className="contact-form"
           action="https://formspree.io/f/xvznoyvl"
           method="POST"
+
         >
           <input type="hidden" name="_replyto" value={form.email} />
           <div className="form-row">
