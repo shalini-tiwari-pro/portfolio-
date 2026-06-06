@@ -545,10 +545,7 @@ function ContactSection() {
               Something went wrong. Please email me directly.
             </p>
           )}
-          <p className="form-note">
-            * Once you connect an email service (EmailJS / Formspree), both you
-            and I receive a notification automatically.
-          </p>
+          
         </form>
       </div>
     </section>
